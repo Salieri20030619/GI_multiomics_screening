@@ -1,0 +1,5 @@
+cat('R_PATH', R.home(), '\n')
+cat('R_VERSION', as.character(getRversion()), '\n')
+pkgs <- c('limma','edgeR','fgsea','msigdbr','survival','readxl','ggplot2','data.table','org.Hs.eg.db','AnnotationDbi')
+for (p in pkgs) cat(p, if(requireNamespace(p, quietly=TRUE)) as.character(packageVersion(p)) else 'MISSING', '\n')
+cat('ENV_CHECK_COMPLETE\n')
